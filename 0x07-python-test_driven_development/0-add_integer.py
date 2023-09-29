@@ -8,6 +8,11 @@ This module supplies one function, add_integer()
 
 def add_integer(a, b=98):
     """
+    Return a + b
+
+    Args:
+        a (int, float): first value
+        b (int, float): second value
     """
     if type(a) in [int, float]:
         try:
