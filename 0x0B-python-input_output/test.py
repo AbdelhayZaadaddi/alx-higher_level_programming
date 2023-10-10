@@ -4,7 +4,6 @@
 Containes a function that reads a text file.
 """
 
-
-def write_file(filename="", text=""):
-    with open(filename, 'w') as f:
+def append_write(filename="", text=""):
+    with open(filename, 'a') as f:
         return f.write(text)
