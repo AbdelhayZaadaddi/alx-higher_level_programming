@@ -1,16 +1,34 @@
-#!/usr/bin/python3
-""" 10-main """
-from models.square import Square
+from models.rectangle import Rectangle
 
-if __name__ == "__main__":
 
-    s1 = Square(5)
-    print(s1)
-    print(s1.size)
-    s1.size = 10
-    print(s1)
+class Square(Rectangle):
+    """Square class that inherits from Rectangle."""
 
-    try:
-        s1.size = "9"
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+    def __init__(self, size, x=0, y=0, id=None):
+        """Initialize Square instance."""
+        super().__init__(size, size, x, y, id)
+
+    def __str__(self):
+        """Return string representation of Square instance."""
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    @property
+    def size(self):
+        """Getter method for size."""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """Setter method for size."""
+        self.width = value
+        self.height = value
+
+    def update(self, *args, **kwargs):
+        """Assign attributes from *args and **kwargs."""
+        if args:
+            attributes = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
