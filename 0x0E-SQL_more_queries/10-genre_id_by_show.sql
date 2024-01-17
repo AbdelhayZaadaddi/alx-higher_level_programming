@@ -1,7 +1,5 @@
--- LIST ALL SHOWS CONTAINED IN hbtn_0d_tvshows
--- tv_shows.title - tv_show_genres.genre_id
--- Results must be sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
-SELECT tv_shows.title, tv_show_genres_id.genre_id
+-- Script that lists all shows contained in the database
+SELECT tv_shows.title, tv_show_genres.genre_id -- Query to join cities and states
 FROM tv_shows
-JOIN tv_show_genres ON tv_shows.id = tv_show_genres_id
+JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
 ORDER BY tv_shows.title, tv_show_genres.genre_id;
