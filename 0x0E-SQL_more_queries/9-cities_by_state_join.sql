@@ -1,0 +1,3 @@
+-- LIST ALL CITIES 
+-- DIPLAY cities.id - cities.name - states.name
+-- order cities.id
