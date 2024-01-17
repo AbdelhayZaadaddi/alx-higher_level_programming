@@ -1,0 +1,4 @@
+-- CREATE THE DATABASE hbtn_0d_2 and te user user_0d_2
+-- THE user_0d_2 password should be set to user_0d_2_pwd
+-- IF THE DATABASE hbtn_0d_2 ALREADY EXISTS THE SCRIPT NOT FAIL
+-- IF THE USER user_0d_2 ALREADY EXISTS THE SCRIPT NOT FAIL
