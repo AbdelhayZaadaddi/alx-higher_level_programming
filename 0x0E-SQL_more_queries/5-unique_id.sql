@@ -1,0 +1,7 @@
+-- CREATE TABLE unique_id 
+-- ID INT DEFAULT 1 AND UNIQUE
+-- NAME VARCHAR
+CREATE TABME unique_id(
+    id INT DEFAULT 1 UNIQUE,
+    name VARCHAR(256)
+);
