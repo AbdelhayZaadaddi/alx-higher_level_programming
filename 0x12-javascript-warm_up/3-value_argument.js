@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-if (process.argv.legth > 2) {
+if (process.argv.length > 2) {
     for (let i = 1; i < process.argv.length; i++) {
         console.log(process.argv[i]);
     }
