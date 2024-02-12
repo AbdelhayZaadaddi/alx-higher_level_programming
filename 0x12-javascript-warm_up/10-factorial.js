@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function factorial(n) {
+function factorial (n) {
   if (isNaN(parseInt(n))) {
     return 1;
   } else if (parseInt(n) < 0) {
