@@ -5,5 +5,5 @@ if (process.argv.legth > 2) {
         console.log(process.argv[i]);
     }
 } else {
-    console.log('No arguments');
+    console.log('No argument');
 }
