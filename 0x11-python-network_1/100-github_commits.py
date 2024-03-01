@@ -5,8 +5,8 @@ Script that takes 2 arguments in order to solve this challenge
 import requests
 from sys import argv
 
-if __name__ == "__main__":
-    url =  "hhtps;//api.gethub.com/repos/{}/{}/commits".format(argv[2], argv[1])
+if __name__ == '__main__':
+    url = "https://api.github.com/repos/{}/{}/commits".format(argv[2], argv[1])
     r = requests.get(url)
     commits = r.json()
     for commit in commits[:10]:
