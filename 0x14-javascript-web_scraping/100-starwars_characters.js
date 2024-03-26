@@ -1,39 +1,26 @@
 #!/usr/bin/node
-/* fetch all user for a specific
- * move based on the id
- */
 
 const request = require('request');
-const base = 'https://swapi-api.alx-tools.com/api/';
 
-if (process.argv.length < 3) {
-  console.error(`Usage: ./${process.argv[1]} <ID>`);
-}
+const movieId = process.argv[2];
+const url = `https://swapi.dev/api/films/${movieId}/`;
 
-const movieUrl = `${base}films/${process.argv[2]}`;
-request.get(movieUrl, (err, res) => {
-  if (err) {
-    console.error('Error:', err.message);
+request.get(url, (error, response, body) => {
+  if (error) {
+    console.log(error);
+    return;
   }
 
-  const data = JSON.parse(res.body).characters;
-
-  const ids = data.map((char) => {
-    const id = (char.split('/'))[(char.split('/').length - 2)];
-    return id;
-  });
-
-  console.log("start");
-  ids.forEach((id) => {
-    const charactersId = `${base}people/${id}`;
-    request.get(charactersId, (err, res) => {
-      if (err) {
-        console.error('Error:', err.message);
+  const data = JSON.parse(body);
+  const characters = data.characters;
+  for (const character of characters) {
+    request(character, (error, response, body) => {
+      if (error) {
+        console.log(error);
+        return;
       }
-      // console.log(JSON.parse(res.body).name);
-      console.log("fetching");
+      const characterData = JSON.parse(body);
+      console.log(characterData.name);
     });
-    console.log("me");
-  });
-  console.log("end");
+  }
 });
