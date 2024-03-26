@@ -5,7 +5,7 @@
  * the first argument is the string to write
  * the content of the file in utf-8
  * if an error occurred during writing, print the error object
- */
+*/
 
 const fs = require('fs');
 
