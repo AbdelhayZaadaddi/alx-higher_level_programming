@@ -3,7 +3,7 @@
  * read the content of a file
  * print the content of the file
  * pint an error if the file does not exist
-*/
+ */
 
 const fs = require('fs');
 
